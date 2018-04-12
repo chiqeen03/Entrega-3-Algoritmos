@@ -1,0 +1,7 @@
+Sergio Ugalde A01336435
+Manuel Avalos Tovar A01336176
+
+Compilar todos los archivos ".java". Ejecutar archivo JFrameMain.
+El archivo pedirá un elemento que se encriptará, se pide con cual llave se va a encriptar,
+ya sea la A o la B. Si no se puede ingresar una palabra así de grande se bloquean los botones
+para desencriptar y sale un error. Se pregunta con cual llave secreta se quiere desencriptar.

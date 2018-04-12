@@ -7,7 +7,7 @@ public class RSA {
 
     //Euclid's
     //----------------------------------------------------------------------------
-    private int euclid(int a, int b){
+    public int euclid(int a, int b){
         if(a > b){
             //euclid
             if (b == 0)
@@ -215,6 +215,18 @@ public class RSA {
         return decrypted;
     }
 
+    public long encryptString(String toEncrypt, Key key){
+        long aux = encryptBase26(toEncrypt);
+        long encrypted = encryptInt(aux, key);
+        return encrypted;
+    }
+
+    public String decryptString(long toDecrypt, Key key){
+        long aux = decryptInt(toDecrypt, key);
+        String decrypted = decryptBase26(aux);
+        return decrypted;
+    }
+
     //m^e%n
     //el valor a encriptar no puede ser mayor que el valor de n
     public long modularPower(long a, int e, int n){
@@ -285,7 +297,7 @@ public class RSA {
                 case 'm':case 'M':
                     mult = 12;
                     break;
-                case 'n':case 'N':case 'ñ':case 'Ñ':
+                case 'n':case 'N':
                     mult = 13;
                     break;
                 case 'o':case 'O':
